@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Ventilator Media</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="EmptyValue">empty</string>
+    <string name="Flowunit">l/min</string>
+    <string name="Pressureunit">mbar</string>
+    <string name="O2unit">%</string>
+    <string name="setValue">set Val</string>
+    <string name="actualValue">act. Val</string>
+    <string name="DeviceID">Device ID:</string>
+    <string name="DeviceState">Status</string>
+    <string name="titleAirflow">Airflow</string>
+    <string name="titlePressure">Pressure</string>
+    <string name="titleO2Conc">O2</string>
+
+
+
+
+
+
+
+
+</resources>

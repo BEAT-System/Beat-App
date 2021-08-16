@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:isScrollContainer="true"
+    android:paddingLeft="8dp"
+    android:paddingTop="8dp"
+    android:paddingRight="8dp"
+    android:paddingBottom="8dp"
+    tools:context=".Device_Fragment">
+
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fillViewport="true"
+                android:scrollbars="horizontal|vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="auto"
+                    android:focusableInTouchMode="true"
+                    android:isScrollContainer="true">
+
+                    <com.jjoe64.graphview.GraphView
+
+                        android:id="@+id/graphFlow"
+                        android:layout_width="700sp"
+                        android:layout_height="220sp"
+                        android:layout_below="@+id/TV_DeviceID"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp" />
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphPressure"
+                        android:layout_width="700sp"
+                        android:layout_height="220sp"
+                        android:layout_below="@+id/graphFlow"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp" />
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphO2"
+                        android:layout_width="700sp"
+                        android:layout_height="220sp"
+                        android:layout_below="@+id/graphPressure"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/TV_DeviceID"
+                        android:layout_width="160sp"
+                        android:layout_height="40sp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="0sp"
+                        android:layout_marginLeft="0sp"
+                        android:layout_marginTop="0sp"
+                        android:gravity="center"
+                        android:text="@string/DeviceID"
+                        android:textColor="#000000"
+                        android:textSize="30sp" />
+                    <TextView
+                        android:id="@+id/TV_DeviceIDEdit"
+                        android:layout_width="160sp"
+                        android:layout_height="40sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="0sp"
+                        android:layout_marginLeft="0sp"
+                        android:layout_marginTop="0sp"
+                        android:layout_toEndOf="@+id/TV_DeviceID"
+                        android:layout_toRightOf="@+id/TV_DeviceID"
+                        android:gravity="center"
+                        android:text="@string/EmptyValue"
+                        android:textColor="#000000"
+                        android:textSize="30sp" />
+                    <TextView
+                        android:id="@+id/TV_StatusValue"
+                        android:layout_width="160sp"
+                        android:layout_height="40sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0sp"
+                        android:layout_marginEnd="0sp"
+                        android:layout_marginRight="0sp"
+                        android:layout_toStartOf="@+id/TV_StatusEditValue"
+                        android:layout_toLeftOf="@+id/TV_StatusEditValue"
+                        android:gravity="center"
+                        android:text="@string/DeviceState"
+                        android:textColor="#000000"
+                        android:textSize="30sp"/>
+                    <TextView
+                        android:id="@+id/TV_StatusEditValue"
+                        android:layout_width="160sp"
+                        android:layout_height="40sp"
+                        android:layout_alignEnd="@+id/graphFlow"
+                        android:layout_alignRight="@+id/graphFlow"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="0sp"
+                        android:layout_marginEnd="0sp"
+                        android:layout_marginRight="0sp"
+                        android:gravity="center"
+                        android:text="@string/EmptyValue"
+                        android:textColor="#000000"
+                        android:textSize="30sp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignTop="@+id/graphFlow"
+                        android:layout_alignBottom="@+id/graphFlow"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/graphFlow"
+                        android:layout_toRightOf="@+id/graphFlow"
+                        android:background="@color/graphcolor_Flow">
+
+                        <TextView
+                            android:id="@+id/TV_setValueFlow"
+                            android:layout_width="100sp"
+                            android:layout_height="30sp"
+                            android:layout_below="@+id/TV_TitleAirflow"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="5sp"
+                            android:gravity="center"
+                            android:text="@string/setValue"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/TV_actualValueFlow"
+                            android:layout_width="100sp"
+                            android:layout_height="30sp"
+                            android:layout_alignTop="@+id/TV_setValueFlow"
+                            android:layout_marginStart="16sp"
+                            android:layout_marginLeft="16sp"
+                            android:layout_marginTop="0sp"
+                            android:layout_toEndOf="@+id/TV_setValueFlow"
+                            android:layout_toRightOf="@+id/TV_setValueFlow"
+                            android:text="@string/actualValue"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/TV_setValueFlowEdit"
+                            android:layout_width="100sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_setValueFlow"
+                            android:layout_alignStart="@+id/TV_setValueFlow"
+                            android:layout_alignLeft="@+id/TV_setValueFlow"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="15sp"
+                            android:gravity="center"
+                            android:text="@string/EmptyValue"
+                            android:textColor="@color/setValue"
+                            android:textColorHighlight="@color/colorAccent"
+                            android:textSize="25sp" />
+
+
+
+                        <TextView
+                            android:id="@+id/TV_actualValueFlowEdit"
+                            android:layout_width="100sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_actualValueFlow"
+                            android:layout_alignStart="@+id/TV_actualValueFlow"
+                            android:layout_alignLeft="@+id/TV_actualValueFlow"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="15sp"
+                            android:text="@string/EmptyValue"
+                            android:textColor="@color/actualValue"
+                            android:textSize="25sp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/TV_unitFlowValueNeu"
+                            android:layout_width="120sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_setValueFlowEdit"
+                            android:layout_alignStart="@+id/TV_TitleAirflow"
+                            android:layout_alignLeft="@+id/TV_TitleAirflow"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15sp"
+                            android:layout_marginEnd="66sp"
+                            android:layout_marginRight="66sp"
+                            android:gravity="center"
+                            android:text="@string/Flowunit"
+                            android:textColor="@android:color/black"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/TV_TitleAirflow"
+                            android:layout_width="120sp"
+                            android:layout_height="40sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginLeft="48sp"
+                            android:layout_marginTop="0dp"
+                            android:text="@string/titleAirflow"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignTop="@+id/graphPressure"
+                        android:layout_alignBottom="@+id/graphPressure"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/graphPressure"
+                        android:layout_toRightOf="@+id/graphPressure"
+                        android:background="@color/graphcolor_Pressure">
+
+                        <TextView
+                            android:id="@+id/TV_setValuePressure"
+                            android:layout_width="100sp"
+                            android:layout_height="30sp"
+                            android:layout_below="@+id/TV_TitlePressure"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="5sp"
+                            android:gravity="center"
+                            android:text="@string/setValue"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/TV_actualValuePressure"
+                            android:layout_width="100sp"
+                            android:layout_height="30sp"
+                            android:layout_alignTop="@+id/TV_setValuePressure"
+                            android:layout_marginStart="16sp"
+                            android:layout_marginLeft="16sp"
+                            android:layout_marginTop="0sp"
+                            android:layout_toEndOf="@+id/TV_setValuePressure"
+                            android:layout_toRightOf="@+id/TV_setValuePressure"
+                            android:text="@string/actualValue"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/TV_setValuePressureEdit"
+                            android:layout_width="100sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_setValuePressure"
+                            android:layout_alignStart="@+id/TV_setValuePressure"
+                            android:layout_alignLeft="@+id/TV_setValuePressure"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="15sp"
+                            android:gravity="center"
+                            android:text="@string/EmptyValue"
+                            android:textColor="@color/setValue"
+                            android:textSize="25sp"
+                            android:typeface="sans" />
+
+                        <TextView
+                            android:id="@+id/TV_actualValuePressureEdit"
+                            android:layout_width="100sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_actualValuePressure"
+                            android:layout_alignStart="@+id/TV_actualValuePressure"
+                            android:layout_alignLeft="@+id/TV_actualValuePressure"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="15sp"
+                            android:text="@string/EmptyValue"
+                            android:textColor="@color/actualValue"
+                            android:textSize="25sp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/TV_unitPressureValue"
+                            android:layout_width="120sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_setValuePressureEdit"
+                            android:layout_alignStart="@+id/TV_TitlePressure"
+                            android:layout_alignLeft="@+id/TV_TitlePressure"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15sp"
+                            android:layout_marginEnd="66sp"
+                            android:layout_marginRight="66sp"
+                            android:gravity="center"
+                            android:text="@string/Flowunit"
+                            android:textColor="@android:color/black"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/TV_TitlePressure"
+                            android:layout_width="120sp"
+                            android:layout_height="40sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginLeft="48sp"
+                            android:layout_marginTop="0dp"
+                            android:text="@string/titlePressure"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_alignTop="@+id/graphO2"
+                        android:layout_alignBottom="@+id/graphO2"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_toEndOf="@+id/graphO2"
+                        android:layout_toRightOf="@+id/graphO2"
+                        android:background="@color/graphcolor_O2">
+
+                        <TextView
+                            android:id="@+id/TV_setValueO2"
+                            android:layout_width="100sp"
+                            android:layout_height="30sp"
+                            android:layout_below="@+id/TV_TitleO2"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="5sp"
+                            android:gravity="center"
+                            android:text="@string/setValue"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/TV_actualValueO2"
+                            android:layout_width="100sp"
+                            android:layout_height="30sp"
+                            android:layout_alignTop="@+id/TV_setValueO2"
+                            android:layout_marginStart="16sp"
+                            android:layout_marginLeft="16sp"
+                            android:layout_marginTop="0sp"
+                            android:layout_toEndOf="@+id/TV_setValueO2"
+                            android:layout_toRightOf="@+id/TV_setValueO2"
+                            android:text="@string/actualValue"
+                            android:textColor="@android:color/black"
+                            android:textSize="20sp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/TV_setValueO2Edit"
+                            android:layout_width="100sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_setValueO2"
+                            android:layout_alignStart="@+id/TV_setValueO2"
+                            android:layout_alignLeft="@+id/TV_setValueO2"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="15sp"
+                            android:gravity="center"
+                            android:text="@string/EmptyValue"
+                            android:textColor="@color/setValue"
+                            android:textSize="25sp"
+                            android:typeface="sans" />
+
+                        <TextView
+                            android:id="@+id/TV_actualValueO2Edit"
+                            android:layout_width="100sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_actualValueO2"
+                            android:layout_alignStart="@+id/TV_actualValueO2"
+                            android:layout_alignLeft="@+id/TV_actualValueO2"
+                            android:layout_marginStart="0sp"
+                            android:layout_marginLeft="0sp"
+                            android:layout_marginTop="15sp"
+                            android:text="@string/EmptyValue"
+                            android:textColor="@color/actualValue"
+                            android:textSize="25sp"
+                            android:gravity="center"/>
+
+                        <TextView
+                            android:id="@+id/TV_unitO2Value"
+                            android:layout_width="120sp"
+                            android:layout_height="40sp"
+                            android:layout_below="@+id/TV_setValueO2Edit"
+                            android:layout_alignStart="@+id/TV_TitleO2"
+                            android:layout_alignLeft="@+id/TV_TitleO2"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="15sp"
+                            android:layout_marginEnd="66sp"
+                            android:layout_marginRight="66sp"
+                            android:gravity="center"
+                            android:text="@string/Flowunit"
+                            android:textColor="@android:color/black"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:id="@+id/TV_TitleO2"
+                            android:layout_width="120sp"
+                            android:layout_height="40sp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginStart="48dp"
+                            android:layout_marginLeft="48sp"
+                            android:layout_marginTop="0dp"
+                            android:text="@string/titleO2Conc"
+                            android:textColor="@android:color/black"
+                            android:gravity="center"
+                            android:textSize="25sp" />
+                    </RelativeLayout>
+
+
+
+
+
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+    </HorizontalScrollView>
+
+</RelativeLayout>
